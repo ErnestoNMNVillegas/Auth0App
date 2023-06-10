@@ -48,24 +48,24 @@ public class AuthConfig {
                 .build();
     }
 
-//    @Bean
-//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-//        http.csrf()
-//                .disable()
-//                .authorizeRequests()
-//                .antMatchers("/callback", "/login", "/")
-//                .permitAll()
-//                .anyRequest()
-//                .authenticated()
-//                .and()
-//                .formLogin()
-//                .loginPage("/login")
-//                .and()
-//                .logout()
-//                .logoutSuccessHandler(logoutSuccessHandler())
-//                .permitAll();
-//        return http.build();
-//    }
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http.csrf()
+                .disable()
+                .authorizeRequests()
+                .antMatchers("/callback", "/login", "/")
+                .permitAll()
+                .anyRequest()
+                .authenticated()
+                .and()
+                .formLogin()
+                .loginPage("/login")
+                .and()
+                .logout()
+                .logoutSuccessHandler(logoutSuccessHandler())
+                .permitAll();
+        return http.build();
+    }
 
     public String getDomain() {
         return domain;
